@@ -25,7 +25,7 @@ const slice = createSlice({
         .addCase(addContactThunk.fulfilled, (state, action) => {
             state.loading = false;
             state.error = null;
-            state.items.push(action.payload);
+            state.items = state.items.push(action.payload);
         })
         .addMatcher(isAnyOf(addContactThunk.rejected, deleteContactThunk.rejected, fetchDataThunk.rejected ),
          (state, action) => {
