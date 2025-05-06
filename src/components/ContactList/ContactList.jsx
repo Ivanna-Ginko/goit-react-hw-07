@@ -1,28 +1,19 @@
+import { SelectFilterContactsMemo, selectLoading, selectError  } from "../../redux/contactsSlice";
 import Contact from "../Contact/Contact";
 import css from "./ContactList.module.css"
 import { useSelector } from 'react-redux';
 
-const filterArr = (arr, fil)=>{
-
-  if (!arr) {return []}
-  if (!fil) {return arr}
- 
-  return arr.filter(ar=>ar.name.toLowerCase().includes(fil.toLowerCase()))
-}
 
 
  function ContactList () {
-  const contacts = useSelector((state) => state.contacts.items);
-  const filter = useSelector((state) => state.filter.name);
-  const loading = useSelector((state) => state.contacts.loading);
 
- 
-  const filterContacts = filterArr(contacts, filter)
+  const filterContacts = useSelector(SelectFilterContactsMemo)
+  const loading = useSelector(selectLoading);
+  const error = useSelector(selectError);
+
 
     return (<>
    
-
-
     <ul className={css.list}>
         
         {filterContacts.map(contact => (
@@ -31,7 +22,7 @@ const filterArr = (arr, fil)=>{
           </li>   ))}   
      
     </ul>    
-    {loading && <h2>moments...</h2>}
+   {loading && !error && <h2>moments...</h2>}
     
     </>
 
@@ -39,3 +30,5 @@ const filterArr = (arr, fil)=>{
 }
 
 export default ContactList;
+
+
