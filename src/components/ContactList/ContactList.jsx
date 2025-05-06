@@ -19,9 +19,6 @@ const filterArr = (arr, fil)=>{
  
   const filterContacts = filterArr(contacts, filter)
 
-  
-  
- console.log (contacts)
     return (<>
    
 
@@ -42,9 +39,3 @@ const filterArr = (arr, fil)=>{
 }
 
 export default ContactList;
-
-
-/*
-
-
-    */
