@@ -14,13 +14,18 @@ const filterArr = (arr, fil)=>{
  function ContactList () {
   const contacts = useSelector((state) => state.contacts.items);
   const filter = useSelector((state) => state.filter.name);
+  const loading = useSelector((state) => state.contacts.loading);
+
  
   const filterContacts = filterArr(contacts, filter)
 
   
   
-
+ console.log (contacts)
     return (<>
+   
+
+
     <ul className={css.list}>
         
         {filterContacts.map(contact => (
@@ -29,6 +34,7 @@ const filterArr = (arr, fil)=>{
           </li>   ))}   
      
     </ul>    
+    {loading && <h2>moments...</h2>}
     
     </>
 

@@ -2,11 +2,21 @@ import './App.css'
 import SearchBox from './components/SearchBox/SearchBox'
 import ContactList from './components/ContactList/ContactList.jsx'
 import ContactForm from './components/ContactForm/ContactForm'
-
+import { useDispatch } from 'react-redux'
+import { fetchDataThunk } from './redux/operation.js'
+import { useEffect } from 'react'
 
 
 function App() {
+
+  const dispatch = useDispatch()
   
+  useEffect (()=>{
+  dispatch(fetchDataThunk())
+  },[dispatch])
+
+  
+
   return(
  
       <div>

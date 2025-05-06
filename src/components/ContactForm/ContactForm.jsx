@@ -1,8 +1,9 @@
 //import { nanoid } from "@reduxjs/toolkit";
 import css from "./ContactForm.module.css"
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsSlice"
+//import { addContact } from "../../redux/contactsSlice"
 import { nanoid } from "@reduxjs/toolkit";
+import { addContactThunk } from "../../redux/operation";
 
 
 
@@ -19,7 +20,7 @@ export default function ContactForm () {
       number: form.elements.number.value,
      }
     console.log(newContact) 
-    dispatch( addContact(newContact))
+    dispatch( addContactThunk(newContact))
     form.reset();
   };
 
