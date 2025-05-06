@@ -33,10 +33,10 @@ const slice = createSlice({
             state.error = action.payload;
        })
         .addMatcher(isAnyOf(addContactThunk.pending, deleteContactThunk.pending, fetchDataThunk.pending ),
-        ), (state) => {
+         (state) => {
             state.loading = true;
             state.error = null;
-       }
+       })
     }
 })
 
