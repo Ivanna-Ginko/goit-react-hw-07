@@ -1,5 +1,5 @@
 import {createSelector, createSlice, isAnyOf} from "@reduxjs/toolkit"
-import { fetchDataThunk, deleteContactThunk, addContactThunk } from "./operation"
+import { fetchDataThunk, deleteContactThunk, addContactThunk } from "./contactsOps"
 import { selectNameFilter } from "./filtersSlice"
 
 

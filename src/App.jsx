@@ -3,7 +3,7 @@ import SearchBox from './components/SearchBox/SearchBox'
 import ContactList from './components/ContactList/ContactList.jsx'
 import ContactForm from './components/ContactForm/ContactForm'
 import { useDispatch } from 'react-redux'
-import { fetchDataThunk } from './redux/operation.js'
+import { fetchDataThunk } from './redux/contactsOps.js'
 import { useEffect } from 'react'
 
 
